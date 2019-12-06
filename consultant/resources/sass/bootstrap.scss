@@ -1,0 +1,55 @@
+
+// Import Google fonts
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+/* Set Font Family */
+
+
+/*=============Over ride =====*/
+@import '~bootstrap/scss/functions';
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+.btn-light,.btn-default
+{
+  color:#212529 !important;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+   color:#fff;
+  }
+  .btn-#{$color}:hover  {
+    color:#fff;
+  }
+
+}
+@each $color, $value in $theme-colors {
+  .card-outline-#{$color} {
+    border-left: 3px solid $value;
+    color:$value;
+    background-color: #fff;
+  }
+}
+@each $color, $value in $theme-colors {
+
+  .btn-outline-#{$color}:hover  {
+    color:#fff;
+  }
+}
+p
+{
+  font-size: 14px;
+}
+.card-header
+{
+  font-family:  'Noto Sans', sans-serif;
+  line-height: 1;
+}
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+      color:#fff;
+    font-size: 14px;
+  }
+}

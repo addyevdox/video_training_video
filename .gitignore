@@ -1,0 +1,17 @@
+/consultant/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/consultant/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+.phpunit.result.cache
+public/mix-manifest.json
+_ide_helper.php
