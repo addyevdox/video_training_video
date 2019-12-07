@@ -147,7 +147,6 @@
                                 <div class="col-lg-2 col-12">
                                     <label class="control-label">
                                         Email:
-                                        <span class='require'>*</span>
                                     </label>
                                 </div>
                                 <div class="col-lg-10 col-12">
@@ -167,7 +166,6 @@
                                 <div class="col-lg-2 col-12">
                                     <label class="control-label">
                                         Address:
-                                        <span class='require'>*</span>
                                     </label>
                                 </div>
                                 <div class="col-lg-10 col-12">

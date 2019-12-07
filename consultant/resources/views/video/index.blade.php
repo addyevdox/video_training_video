@@ -18,18 +18,11 @@
             <div class="row">
                 <div class="col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{{ route('home') }}"> <i class="livicon icon3 icon4" data-name="home" data-size="18" data-loop="true" data-c="#3d3d3d" data-hc="#3d3d3d"></i>Home
-                            </a>
-                        </li>
                         <li class="d-none d-sm-block ">
-                            <i class="livicon icon3" data-name="angle-double-right" data-size="18" data-loop="true" data-c="#01bc8c" data-hc="#01bc8c"></i>
-                            <a href="#">Video List</a>
+                            <i class="livicon" data-name="users" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
+                            <a href="#">Training</a>
                         </li>
                     </ol>
-                    <div class="float-right mt-1">
-                        <i class="livicon icon3" data-name="pen" data-size="20" data-loop="true" data-c="#3d3d3d" data-hc="#3d3d3d"></i> Video
-                    </div>
                 </div>
             </div>
         </div>
@@ -46,7 +39,7 @@
                 <div class="card ">
                     <div class="card-header bg-primary text-white clearfix">
                         <h4 class="card-title float-left"> <i class="livicon" data-name="users" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            @lang('blog/title.bloglist')
+                           Training
                         </h4>
                     </div>
                     <br />

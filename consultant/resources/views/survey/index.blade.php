@@ -27,9 +27,6 @@
                             <a href="#">Survey</a>
                         </li>
                     </ol>
-                    <div class="float-right mt-1">
-                        <i class="livicon icon3" data-name="pen" data-size="20" data-loop="true" data-c="#3d3d3d" data-hc="#3d3d3d"></i> Survey
-                    </div>
                 </div>
             </div>
         </div>
@@ -47,7 +44,7 @@
                 <div class="card ">
                     <div class="card-header bg-primary text-white clearfix">
                         <h4 class="card-title float-left"> <i class="livicon" data-name="users" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                           Survey list
+                          Survey
                         </h4>
                     </div>
                     <br />
