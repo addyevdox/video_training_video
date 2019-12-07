@@ -1,0 +1,1188 @@
+/** code taken from https://github.com/alexwolfe/Buttons
+* taking only required code
+*/
+
+/*
+* Button Defaults
+*
+* Some default settings that are used throughout the button library.
+* Changes to these settings will be picked up by all of the other modules.
+* The colors used here are the default colors for the base button (gray).
+* The font size and height are used to set the base size for the buttons.
+* The size values will be used to calculate the larger and smaller button sizes.
+*/
+
+/*
+* Button Sizes
+*
+* $ubtn-sizes is used to generate the different button sizes.
+* Edit or add colors to the list below and recompile.
+* Each block contains the (name, size multiplier).
+* The class is generated using the name: (ex .button-giant).
+*/
+
+/*
+* Button Colors
+*
+* $ubtn-colors is used to generate the different button colors.
+* Edit or add colors to the list below and recompile.
+* Each block contains the (name, background, color)
+* The class is generated using the name: (ex .button-primary)
+*/
+
+/*
+* Button Shapes
+*
+* This file creates the various button shapes
+* (ex. Circle, Rounded, Pill)
+*/
+
+.btn-square {
+  border-radius: 0;
+}
+
+.btn-box {
+  border-radius: 10px;
+}
+
+.btn-pill {
+  border-radius: 200px;
+}
+
+.btn-circle {
+  border-radius: 100%;
+}
+
+/*
+* 3D Buttons
+*
+* These buttons have a heavy three dimensional
+* style that mimics the visual appearance of a
+* real life button.
+*/
+
+.btn-3d {
+  position: relative;
+  top: 0;
+  box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:hover,
+.btn-3d:focus {
+  box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:active,
+.btn-3d.active,
+.btn-3d.is-active {
+  top: 5px;
+  transition-property: all;
+  transition-duration: 0.15s;
+  box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+/*
+* 3D Button Colors
+*
+* Create colors for buttons
+* (.button-primary, .button-secondary, etc.)
+*/
+
+.btn-3d.btn-primary {
+  box-shadow: 0 7px 0 #2f71a9, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-primary:hover,
+.btn-3d.btn-primary:focus {
+  box-shadow: 0 7px 0 #2d6ca1, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-primary:active,
+.btn-3d.btn-primary.active,
+.btn-3d.btn-primary.is-active {
+  box-shadow: 0 2px 0 #245681, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-success {
+  box-shadow: 0 7px 0 #008966, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-success:hover,
+.btn-3d.btn-success:focus {
+  box-shadow: 0 7px 0 #007f5e, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-success:active,
+.btn-3d.btn-success.active,
+.btn-3d.btn-success.is-active {
+  box-shadow: 0 2px 0 #005640, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-info {
+  box-shadow: 0 7px 0 #3db5d6, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-info:hover,
+.btn-3d.btn-info:focus {
+  box-shadow: 0 7px 0 #34b2d4, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-info:active,
+.btn-3d.btn-info.active,
+.btn-3d.btn-info.is-active {
+  box-shadow: 0 2px 0 #2799b9, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-warning {
+  box-shadow: 0 7px 0 #d37e06, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-warning:hover,
+.btn-3d.btn-warning:focus {
+  box-shadow: 0 7px 0 #c97806, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-warning:active,
+.btn-3d.btn-warning.active,
+.btn-3d.btn-warning.is-active {
+  box-shadow: 0 2px 0 #a16105, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-danger {
+  box-shadow: 0 7px 0 #ea423e, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-danger:hover,
+.btn-3d.btn-danger:focus {
+  box-shadow: 0 7px 0 #e93935, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-danger:active,
+.btn-3d.btn-danger.active,
+.btn-3d.btn-danger.is-active {
+  box-shadow: 0 2px 0 #dd1d18, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-light {
+  box-shadow: 0 7px 0 #dae0e5, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-light:hover,
+.btn-3d.btn-light:focus {
+  box-shadow: 0 7px 0 #d4dae1, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-light:active,
+.btn-3d.btn-light.active,
+.btn-3d.btn-light.is-active {
+  box-shadow: 0 2px 0 #bdc6d0, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-dark {
+  box-shadow: 0 7px 0 #1d2124, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-dark:hover,
+.btn-3d.btn-dark:focus {
+  box-shadow: 0 7px 0 #191b1e, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-dark:active,
+.btn-3d.btn-dark.active,
+.btn-3d.btn-dark.is-active {
+  box-shadow: 0 2px 0 #060708, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d.btn-secondary {
+  box-shadow: 0 7px 0 #8c9ea6, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-secondary:hover,
+.btn-3d.btn-secondary:focus {
+  box-shadow: 0 7px 0 #8799a1, 0 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d.btn-secondary:active,
+.btn-3d.btn-secondary.active,
+.btn-3d.btn-secondary.is-active {
+  box-shadow: 0 2px 0 #70858f, 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+/*
+* Glowing Buttons
+*
+* A pulse like glow that appears
+* rythmically around the edges of
+* a button.
+*/
+
+/*
+* Glowing Keyframes for various colors
+*
+*/
+
+@-webkit-keyframes glowing-primary {
+  from {
+    box-shadow: 0 0 0 rgba(65, 139, 202, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(65, 139, 202, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(65, 139, 202, 0.3);
+  }
+}
+
+@keyframes glowing-primary {
+  from {
+    box-shadow: 0 0 0 rgba(65, 139, 202, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(65, 139, 202, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(65, 139, 202, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-success {
+  from {
+    box-shadow: 0 0 0 rgba(0, 188, 140, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 188, 140, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(0, 188, 140, 0.3);
+  }
+}
+
+@keyframes glowing-success {
+  from {
+    box-shadow: 0 0 0 rgba(0, 188, 140, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 188, 140, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(0, 188, 140, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-info {
+  from {
+    box-shadow: 0 0 0 rgba(103, 197, 223, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(103, 197, 223, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(103, 197, 223, 0.3);
+  }
+}
+
+@keyframes glowing-info {
+  from {
+    box-shadow: 0 0 0 rgba(103, 197, 223, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(103, 197, 223, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(103, 197, 223, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-warning {
+  from {
+    box-shadow: 0 0 0 rgba(248, 154, 20, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(248, 154, 20, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(248, 154, 20, 0.3);
+  }
+}
+
+@keyframes glowing-warning {
+  from {
+    box-shadow: 0 0 0 rgba(248, 154, 20, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(248, 154, 20, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(248, 154, 20, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-danger {
+  from {
+    box-shadow: 0 0 0 rgba(239, 111, 108, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(239, 111, 108, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(239, 111, 108, 0.3);
+  }
+}
+
+@keyframes glowing-danger {
+  from {
+    box-shadow: 0 0 0 rgba(239, 111, 108, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(239, 111, 108, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(239, 111, 108, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-light {
+  from {
+    box-shadow: 0 0 0 rgba(248, 249, 250, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(248, 249, 250, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(248, 249, 250, 0.3);
+  }
+}
+
+@keyframes glowing-light {
+  from {
+    box-shadow: 0 0 0 rgba(248, 249, 250, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(248, 249, 250, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(248, 249, 250, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-dark {
+  from {
+    box-shadow: 0 0 0 rgba(52, 58, 64, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(52, 58, 64, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(52, 58, 64, 0.3);
+  }
+}
+
+@keyframes glowing-dark {
+  from {
+    box-shadow: 0 0 0 rgba(52, 58, 64, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(52, 58, 64, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(52, 58, 64, 0.3);
+  }
+}
+
+@-webkit-keyframes glowing-secondary {
+  from {
+    box-shadow: 0 0 0 rgba(169, 182, 188, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(169, 182, 188, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(169, 182, 188, 0.3);
+  }
+}
+
+@keyframes glowing-secondary {
+  from {
+    box-shadow: 0 0 0 rgba(169, 182, 188, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(169, 182, 188, 0.8);
+  }
+
+  to {
+    box-shadow: 0 0 0 rgba(169, 182, 188, 0.3);
+  }
+}
+
+/*
+* Glowing Buttons Base Styes
+*
+* A pulse like glow that appears
+* rythmically around the edges of
+* a button.
+*/
+
+.btn-glow {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: glowing;
+          animation-name: glowing;
+}
+
+.btn-glow:active,
+.btn-glow.active,
+.btn-glow.is-active {
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+
+/*
+* Glowing Button Colors
+*
+* Create colors for glowing buttons
+*/
+
+.btn-glow.btn-primary {
+  -webkit-animation-name: glowing-primary;
+          animation-name: glowing-primary;
+}
+
+.btn-glow.btn-success {
+  -webkit-animation-name: glowing-success;
+          animation-name: glowing-success;
+}
+
+.btn-glow.btn-info {
+  -webkit-animation-name: glowing-info;
+          animation-name: glowing-info;
+}
+
+.btn-glow.btn-warning {
+  -webkit-animation-name: glowing-warning;
+          animation-name: glowing-warning;
+}
+
+.btn-glow.btn-danger {
+  -webkit-animation-name: glowing-danger;
+          animation-name: glowing-danger;
+}
+
+.btn-glow.btn-light {
+  -webkit-animation-name: glowing-light;
+          animation-name: glowing-light;
+}
+
+.btn-glow.btn-dark {
+  -webkit-animation-name: glowing-dark;
+          animation-name: glowing-dark;
+}
+
+.btn-glow.btn-secondary {
+  -webkit-animation-name: glowing-secondary;
+          animation-name: glowing-secondary;
+}
+
+/*
+* Button Wrapper
+*
+* A wrap around effect to highlight
+* the shape of the button and offer
+* a subtle visual effect.
+*/
+
+.btn-wrap {
+  border: 1px solid #e3e3e3;
+  display: inline-block;
+  padding: 9px;
+  border-radius: 200px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/*
+* Long Shadow Buttons
+*
+* A visual effect adding a flat shadow to the text of a button
+*/
+
+/*
+* Long Shadow Function
+*
+* Loops $length times building a long shadow. Defaults downward right
+*/
+
+/*
+* LONG SHADOW MIXIN
+*
+*/
+
+/*
+* Shadow Right
+*
+*/
+
+.btn-longshadow,
+.btn-longshadow-right {
+  overflow: hidden;
+}
+
+.btn-longshadow.btn-primary,
+.btn-longshadow-right.btn-primary {
+  text-shadow: 0px 0px #2f71a9, 1px 1px #2f71a9, 2px 2px #2f71a9, 3px 3px #2f71a9, 4px 4px #2f71a9, 5px 5px #2f71a9, 6px 6px #2f71a9, 7px 7px #2f71a9, 8px 8px #2f71a9, 9px 9px #2f71a9, 10px 10px #2f71a9, 11px 11px #2f71a9, 12px 12px #2f71a9, 13px 13px #2f71a9, 14px 14px #2f71a9, 15px 15px #2f71a9, 16px 16px #2f71a9, 17px 17px #2f71a9, 18px 18px #2f71a9, 19px 19px #2f71a9, 20px 20px #2f71a9, 21px 21px #2f71a9, 22px 22px #2f71a9, 23px 23px #2f71a9, 24px 24px #2f71a9, 25px 25px #2f71a9, 26px 26px #2f71a9, 27px 27px #2f71a9, 28px 28px #2f71a9, 29px 29px #2f71a9, 30px 30px #2f71a9, 31px 31px #2f71a9, 32px 32px #2f71a9, 33px 33px #2f71a9, 34px 34px #2f71a9, 35px 35px #2f71a9, 36px 36px #2f71a9, 37px 37px #2f71a9, 38px 38px #2f71a9, 39px 39px #2f71a9, 40px 40px #2f71a9, 41px 41px #2f71a9, 42px 42px #2f71a9, 43px 43px #2f71a9, 44px 44px #2f71a9, 45px 45px #2f71a9, 46px 46px #2f71a9, 47px 47px #2f71a9, 48px 48px #2f71a9, 49px 49px #2f71a9, 50px 50px #2f71a9, 51px 51px #2f71a9, 52px 52px #2f71a9, 53px 53px #2f71a9, 54px 54px #2f71a9, 55px 55px #2f71a9, 56px 56px #2f71a9, 57px 57px #2f71a9, 58px 58px #2f71a9, 59px 59px #2f71a9, 60px 60px #2f71a9, 61px 61px #2f71a9, 62px 62px #2f71a9, 63px 63px #2f71a9, 64px 64px #2f71a9, 65px 65px #2f71a9, 66px 66px #2f71a9, 67px 67px #2f71a9, 68px 68px #2f71a9, 69px 69px #2f71a9, 70px 70px #2f71a9, 71px 71px #2f71a9, 72px 72px #2f71a9, 73px 73px #2f71a9, 74px 74px #2f71a9, 75px 75px #2f71a9, 76px 76px #2f71a9, 77px 77px #2f71a9, 78px 78px #2f71a9, 79px 79px #2f71a9, 80px 80px #2f71a9, 81px 81px #2f71a9, 82px 82px #2f71a9, 83px 83px #2f71a9, 84px 84px #2f71a9, 85px 85px #2f71a9;
+}
+
+.btn-longshadow.btn-primary:active,
+.btn-longshadow.btn-primary.active,
+.btn-longshadow.btn-primary.is-active,
+.btn-longshadow-right.btn-primary:active,
+.btn-longshadow-right.btn-primary.active,
+.btn-longshadow-right.btn-primary.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-success,
+.btn-longshadow-right.btn-success {
+  text-shadow: 0px 0px #008966, 1px 1px #008966, 2px 2px #008966, 3px 3px #008966, 4px 4px #008966, 5px 5px #008966, 6px 6px #008966, 7px 7px #008966, 8px 8px #008966, 9px 9px #008966, 10px 10px #008966, 11px 11px #008966, 12px 12px #008966, 13px 13px #008966, 14px 14px #008966, 15px 15px #008966, 16px 16px #008966, 17px 17px #008966, 18px 18px #008966, 19px 19px #008966, 20px 20px #008966, 21px 21px #008966, 22px 22px #008966, 23px 23px #008966, 24px 24px #008966, 25px 25px #008966, 26px 26px #008966, 27px 27px #008966, 28px 28px #008966, 29px 29px #008966, 30px 30px #008966, 31px 31px #008966, 32px 32px #008966, 33px 33px #008966, 34px 34px #008966, 35px 35px #008966, 36px 36px #008966, 37px 37px #008966, 38px 38px #008966, 39px 39px #008966, 40px 40px #008966, 41px 41px #008966, 42px 42px #008966, 43px 43px #008966, 44px 44px #008966, 45px 45px #008966, 46px 46px #008966, 47px 47px #008966, 48px 48px #008966, 49px 49px #008966, 50px 50px #008966, 51px 51px #008966, 52px 52px #008966, 53px 53px #008966, 54px 54px #008966, 55px 55px #008966, 56px 56px #008966, 57px 57px #008966, 58px 58px #008966, 59px 59px #008966, 60px 60px #008966, 61px 61px #008966, 62px 62px #008966, 63px 63px #008966, 64px 64px #008966, 65px 65px #008966, 66px 66px #008966, 67px 67px #008966, 68px 68px #008966, 69px 69px #008966, 70px 70px #008966, 71px 71px #008966, 72px 72px #008966, 73px 73px #008966, 74px 74px #008966, 75px 75px #008966, 76px 76px #008966, 77px 77px #008966, 78px 78px #008966, 79px 79px #008966, 80px 80px #008966, 81px 81px #008966, 82px 82px #008966, 83px 83px #008966, 84px 84px #008966, 85px 85px #008966;
+}
+
+.btn-longshadow.btn-success:active,
+.btn-longshadow.btn-success.active,
+.btn-longshadow.btn-success.is-active,
+.btn-longshadow-right.btn-success:active,
+.btn-longshadow-right.btn-success.active,
+.btn-longshadow-right.btn-success.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-info,
+.btn-longshadow-right.btn-info {
+  text-shadow: 0px 0px #3db5d6, 1px 1px #3db5d6, 2px 2px #3db5d6, 3px 3px #3db5d6, 4px 4px #3db5d6, 5px 5px #3db5d6, 6px 6px #3db5d6, 7px 7px #3db5d6, 8px 8px #3db5d6, 9px 9px #3db5d6, 10px 10px #3db5d6, 11px 11px #3db5d6, 12px 12px #3db5d6, 13px 13px #3db5d6, 14px 14px #3db5d6, 15px 15px #3db5d6, 16px 16px #3db5d6, 17px 17px #3db5d6, 18px 18px #3db5d6, 19px 19px #3db5d6, 20px 20px #3db5d6, 21px 21px #3db5d6, 22px 22px #3db5d6, 23px 23px #3db5d6, 24px 24px #3db5d6, 25px 25px #3db5d6, 26px 26px #3db5d6, 27px 27px #3db5d6, 28px 28px #3db5d6, 29px 29px #3db5d6, 30px 30px #3db5d6, 31px 31px #3db5d6, 32px 32px #3db5d6, 33px 33px #3db5d6, 34px 34px #3db5d6, 35px 35px #3db5d6, 36px 36px #3db5d6, 37px 37px #3db5d6, 38px 38px #3db5d6, 39px 39px #3db5d6, 40px 40px #3db5d6, 41px 41px #3db5d6, 42px 42px #3db5d6, 43px 43px #3db5d6, 44px 44px #3db5d6, 45px 45px #3db5d6, 46px 46px #3db5d6, 47px 47px #3db5d6, 48px 48px #3db5d6, 49px 49px #3db5d6, 50px 50px #3db5d6, 51px 51px #3db5d6, 52px 52px #3db5d6, 53px 53px #3db5d6, 54px 54px #3db5d6, 55px 55px #3db5d6, 56px 56px #3db5d6, 57px 57px #3db5d6, 58px 58px #3db5d6, 59px 59px #3db5d6, 60px 60px #3db5d6, 61px 61px #3db5d6, 62px 62px #3db5d6, 63px 63px #3db5d6, 64px 64px #3db5d6, 65px 65px #3db5d6, 66px 66px #3db5d6, 67px 67px #3db5d6, 68px 68px #3db5d6, 69px 69px #3db5d6, 70px 70px #3db5d6, 71px 71px #3db5d6, 72px 72px #3db5d6, 73px 73px #3db5d6, 74px 74px #3db5d6, 75px 75px #3db5d6, 76px 76px #3db5d6, 77px 77px #3db5d6, 78px 78px #3db5d6, 79px 79px #3db5d6, 80px 80px #3db5d6, 81px 81px #3db5d6, 82px 82px #3db5d6, 83px 83px #3db5d6, 84px 84px #3db5d6, 85px 85px #3db5d6;
+}
+
+.btn-longshadow.btn-info:active,
+.btn-longshadow.btn-info.active,
+.btn-longshadow.btn-info.is-active,
+.btn-longshadow-right.btn-info:active,
+.btn-longshadow-right.btn-info.active,
+.btn-longshadow-right.btn-info.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-warning,
+.btn-longshadow-right.btn-warning {
+  text-shadow: 0px 0px #d37e06, 1px 1px #d37e06, 2px 2px #d37e06, 3px 3px #d37e06, 4px 4px #d37e06, 5px 5px #d37e06, 6px 6px #d37e06, 7px 7px #d37e06, 8px 8px #d37e06, 9px 9px #d37e06, 10px 10px #d37e06, 11px 11px #d37e06, 12px 12px #d37e06, 13px 13px #d37e06, 14px 14px #d37e06, 15px 15px #d37e06, 16px 16px #d37e06, 17px 17px #d37e06, 18px 18px #d37e06, 19px 19px #d37e06, 20px 20px #d37e06, 21px 21px #d37e06, 22px 22px #d37e06, 23px 23px #d37e06, 24px 24px #d37e06, 25px 25px #d37e06, 26px 26px #d37e06, 27px 27px #d37e06, 28px 28px #d37e06, 29px 29px #d37e06, 30px 30px #d37e06, 31px 31px #d37e06, 32px 32px #d37e06, 33px 33px #d37e06, 34px 34px #d37e06, 35px 35px #d37e06, 36px 36px #d37e06, 37px 37px #d37e06, 38px 38px #d37e06, 39px 39px #d37e06, 40px 40px #d37e06, 41px 41px #d37e06, 42px 42px #d37e06, 43px 43px #d37e06, 44px 44px #d37e06, 45px 45px #d37e06, 46px 46px #d37e06, 47px 47px #d37e06, 48px 48px #d37e06, 49px 49px #d37e06, 50px 50px #d37e06, 51px 51px #d37e06, 52px 52px #d37e06, 53px 53px #d37e06, 54px 54px #d37e06, 55px 55px #d37e06, 56px 56px #d37e06, 57px 57px #d37e06, 58px 58px #d37e06, 59px 59px #d37e06, 60px 60px #d37e06, 61px 61px #d37e06, 62px 62px #d37e06, 63px 63px #d37e06, 64px 64px #d37e06, 65px 65px #d37e06, 66px 66px #d37e06, 67px 67px #d37e06, 68px 68px #d37e06, 69px 69px #d37e06, 70px 70px #d37e06, 71px 71px #d37e06, 72px 72px #d37e06, 73px 73px #d37e06, 74px 74px #d37e06, 75px 75px #d37e06, 76px 76px #d37e06, 77px 77px #d37e06, 78px 78px #d37e06, 79px 79px #d37e06, 80px 80px #d37e06, 81px 81px #d37e06, 82px 82px #d37e06, 83px 83px #d37e06, 84px 84px #d37e06, 85px 85px #d37e06;
+}
+
+.btn-longshadow.btn-warning:active,
+.btn-longshadow.btn-warning.active,
+.btn-longshadow.btn-warning.is-active,
+.btn-longshadow-right.btn-warning:active,
+.btn-longshadow-right.btn-warning.active,
+.btn-longshadow-right.btn-warning.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-danger,
+.btn-longshadow-right.btn-danger {
+  text-shadow: 0px 0px #ea423e, 1px 1px #ea423e, 2px 2px #ea423e, 3px 3px #ea423e, 4px 4px #ea423e, 5px 5px #ea423e, 6px 6px #ea423e, 7px 7px #ea423e, 8px 8px #ea423e, 9px 9px #ea423e, 10px 10px #ea423e, 11px 11px #ea423e, 12px 12px #ea423e, 13px 13px #ea423e, 14px 14px #ea423e, 15px 15px #ea423e, 16px 16px #ea423e, 17px 17px #ea423e, 18px 18px #ea423e, 19px 19px #ea423e, 20px 20px #ea423e, 21px 21px #ea423e, 22px 22px #ea423e, 23px 23px #ea423e, 24px 24px #ea423e, 25px 25px #ea423e, 26px 26px #ea423e, 27px 27px #ea423e, 28px 28px #ea423e, 29px 29px #ea423e, 30px 30px #ea423e, 31px 31px #ea423e, 32px 32px #ea423e, 33px 33px #ea423e, 34px 34px #ea423e, 35px 35px #ea423e, 36px 36px #ea423e, 37px 37px #ea423e, 38px 38px #ea423e, 39px 39px #ea423e, 40px 40px #ea423e, 41px 41px #ea423e, 42px 42px #ea423e, 43px 43px #ea423e, 44px 44px #ea423e, 45px 45px #ea423e, 46px 46px #ea423e, 47px 47px #ea423e, 48px 48px #ea423e, 49px 49px #ea423e, 50px 50px #ea423e, 51px 51px #ea423e, 52px 52px #ea423e, 53px 53px #ea423e, 54px 54px #ea423e, 55px 55px #ea423e, 56px 56px #ea423e, 57px 57px #ea423e, 58px 58px #ea423e, 59px 59px #ea423e, 60px 60px #ea423e, 61px 61px #ea423e, 62px 62px #ea423e, 63px 63px #ea423e, 64px 64px #ea423e, 65px 65px #ea423e, 66px 66px #ea423e, 67px 67px #ea423e, 68px 68px #ea423e, 69px 69px #ea423e, 70px 70px #ea423e, 71px 71px #ea423e, 72px 72px #ea423e, 73px 73px #ea423e, 74px 74px #ea423e, 75px 75px #ea423e, 76px 76px #ea423e, 77px 77px #ea423e, 78px 78px #ea423e, 79px 79px #ea423e, 80px 80px #ea423e, 81px 81px #ea423e, 82px 82px #ea423e, 83px 83px #ea423e, 84px 84px #ea423e, 85px 85px #ea423e;
+}
+
+.btn-longshadow.btn-danger:active,
+.btn-longshadow.btn-danger.active,
+.btn-longshadow.btn-danger.is-active,
+.btn-longshadow-right.btn-danger:active,
+.btn-longshadow-right.btn-danger.active,
+.btn-longshadow-right.btn-danger.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-light,
+.btn-longshadow-right.btn-light {
+  text-shadow: 0px 0px #dae0e5, 1px 1px #dae0e5, 2px 2px #dae0e5, 3px 3px #dae0e5, 4px 4px #dae0e5, 5px 5px #dae0e5, 6px 6px #dae0e5, 7px 7px #dae0e5, 8px 8px #dae0e5, 9px 9px #dae0e5, 10px 10px #dae0e5, 11px 11px #dae0e5, 12px 12px #dae0e5, 13px 13px #dae0e5, 14px 14px #dae0e5, 15px 15px #dae0e5, 16px 16px #dae0e5, 17px 17px #dae0e5, 18px 18px #dae0e5, 19px 19px #dae0e5, 20px 20px #dae0e5, 21px 21px #dae0e5, 22px 22px #dae0e5, 23px 23px #dae0e5, 24px 24px #dae0e5, 25px 25px #dae0e5, 26px 26px #dae0e5, 27px 27px #dae0e5, 28px 28px #dae0e5, 29px 29px #dae0e5, 30px 30px #dae0e5, 31px 31px #dae0e5, 32px 32px #dae0e5, 33px 33px #dae0e5, 34px 34px #dae0e5, 35px 35px #dae0e5, 36px 36px #dae0e5, 37px 37px #dae0e5, 38px 38px #dae0e5, 39px 39px #dae0e5, 40px 40px #dae0e5, 41px 41px #dae0e5, 42px 42px #dae0e5, 43px 43px #dae0e5, 44px 44px #dae0e5, 45px 45px #dae0e5, 46px 46px #dae0e5, 47px 47px #dae0e5, 48px 48px #dae0e5, 49px 49px #dae0e5, 50px 50px #dae0e5, 51px 51px #dae0e5, 52px 52px #dae0e5, 53px 53px #dae0e5, 54px 54px #dae0e5, 55px 55px #dae0e5, 56px 56px #dae0e5, 57px 57px #dae0e5, 58px 58px #dae0e5, 59px 59px #dae0e5, 60px 60px #dae0e5, 61px 61px #dae0e5, 62px 62px #dae0e5, 63px 63px #dae0e5, 64px 64px #dae0e5, 65px 65px #dae0e5, 66px 66px #dae0e5, 67px 67px #dae0e5, 68px 68px #dae0e5, 69px 69px #dae0e5, 70px 70px #dae0e5, 71px 71px #dae0e5, 72px 72px #dae0e5, 73px 73px #dae0e5, 74px 74px #dae0e5, 75px 75px #dae0e5, 76px 76px #dae0e5, 77px 77px #dae0e5, 78px 78px #dae0e5, 79px 79px #dae0e5, 80px 80px #dae0e5, 81px 81px #dae0e5, 82px 82px #dae0e5, 83px 83px #dae0e5, 84px 84px #dae0e5, 85px 85px #dae0e5;
+}
+
+.btn-longshadow.btn-light:active,
+.btn-longshadow.btn-light.active,
+.btn-longshadow.btn-light.is-active,
+.btn-longshadow-right.btn-light:active,
+.btn-longshadow-right.btn-light.active,
+.btn-longshadow-right.btn-light.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-dark,
+.btn-longshadow-right.btn-dark {
+  text-shadow: 0px 0px #1d2124, 1px 1px #1d2124, 2px 2px #1d2124, 3px 3px #1d2124, 4px 4px #1d2124, 5px 5px #1d2124, 6px 6px #1d2124, 7px 7px #1d2124, 8px 8px #1d2124, 9px 9px #1d2124, 10px 10px #1d2124, 11px 11px #1d2124, 12px 12px #1d2124, 13px 13px #1d2124, 14px 14px #1d2124, 15px 15px #1d2124, 16px 16px #1d2124, 17px 17px #1d2124, 18px 18px #1d2124, 19px 19px #1d2124, 20px 20px #1d2124, 21px 21px #1d2124, 22px 22px #1d2124, 23px 23px #1d2124, 24px 24px #1d2124, 25px 25px #1d2124, 26px 26px #1d2124, 27px 27px #1d2124, 28px 28px #1d2124, 29px 29px #1d2124, 30px 30px #1d2124, 31px 31px #1d2124, 32px 32px #1d2124, 33px 33px #1d2124, 34px 34px #1d2124, 35px 35px #1d2124, 36px 36px #1d2124, 37px 37px #1d2124, 38px 38px #1d2124, 39px 39px #1d2124, 40px 40px #1d2124, 41px 41px #1d2124, 42px 42px #1d2124, 43px 43px #1d2124, 44px 44px #1d2124, 45px 45px #1d2124, 46px 46px #1d2124, 47px 47px #1d2124, 48px 48px #1d2124, 49px 49px #1d2124, 50px 50px #1d2124, 51px 51px #1d2124, 52px 52px #1d2124, 53px 53px #1d2124, 54px 54px #1d2124, 55px 55px #1d2124, 56px 56px #1d2124, 57px 57px #1d2124, 58px 58px #1d2124, 59px 59px #1d2124, 60px 60px #1d2124, 61px 61px #1d2124, 62px 62px #1d2124, 63px 63px #1d2124, 64px 64px #1d2124, 65px 65px #1d2124, 66px 66px #1d2124, 67px 67px #1d2124, 68px 68px #1d2124, 69px 69px #1d2124, 70px 70px #1d2124, 71px 71px #1d2124, 72px 72px #1d2124, 73px 73px #1d2124, 74px 74px #1d2124, 75px 75px #1d2124, 76px 76px #1d2124, 77px 77px #1d2124, 78px 78px #1d2124, 79px 79px #1d2124, 80px 80px #1d2124, 81px 81px #1d2124, 82px 82px #1d2124, 83px 83px #1d2124, 84px 84px #1d2124, 85px 85px #1d2124;
+}
+
+.btn-longshadow.btn-dark:active,
+.btn-longshadow.btn-dark.active,
+.btn-longshadow.btn-dark.is-active,
+.btn-longshadow-right.btn-dark:active,
+.btn-longshadow-right.btn-dark.active,
+.btn-longshadow-right.btn-dark.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow.btn-secondary,
+.btn-longshadow-right.btn-secondary {
+  text-shadow: 0px 0px #8c9ea6, 1px 1px #8c9ea6, 2px 2px #8c9ea6, 3px 3px #8c9ea6, 4px 4px #8c9ea6, 5px 5px #8c9ea6, 6px 6px #8c9ea6, 7px 7px #8c9ea6, 8px 8px #8c9ea6, 9px 9px #8c9ea6, 10px 10px #8c9ea6, 11px 11px #8c9ea6, 12px 12px #8c9ea6, 13px 13px #8c9ea6, 14px 14px #8c9ea6, 15px 15px #8c9ea6, 16px 16px #8c9ea6, 17px 17px #8c9ea6, 18px 18px #8c9ea6, 19px 19px #8c9ea6, 20px 20px #8c9ea6, 21px 21px #8c9ea6, 22px 22px #8c9ea6, 23px 23px #8c9ea6, 24px 24px #8c9ea6, 25px 25px #8c9ea6, 26px 26px #8c9ea6, 27px 27px #8c9ea6, 28px 28px #8c9ea6, 29px 29px #8c9ea6, 30px 30px #8c9ea6, 31px 31px #8c9ea6, 32px 32px #8c9ea6, 33px 33px #8c9ea6, 34px 34px #8c9ea6, 35px 35px #8c9ea6, 36px 36px #8c9ea6, 37px 37px #8c9ea6, 38px 38px #8c9ea6, 39px 39px #8c9ea6, 40px 40px #8c9ea6, 41px 41px #8c9ea6, 42px 42px #8c9ea6, 43px 43px #8c9ea6, 44px 44px #8c9ea6, 45px 45px #8c9ea6, 46px 46px #8c9ea6, 47px 47px #8c9ea6, 48px 48px #8c9ea6, 49px 49px #8c9ea6, 50px 50px #8c9ea6, 51px 51px #8c9ea6, 52px 52px #8c9ea6, 53px 53px #8c9ea6, 54px 54px #8c9ea6, 55px 55px #8c9ea6, 56px 56px #8c9ea6, 57px 57px #8c9ea6, 58px 58px #8c9ea6, 59px 59px #8c9ea6, 60px 60px #8c9ea6, 61px 61px #8c9ea6, 62px 62px #8c9ea6, 63px 63px #8c9ea6, 64px 64px #8c9ea6, 65px 65px #8c9ea6, 66px 66px #8c9ea6, 67px 67px #8c9ea6, 68px 68px #8c9ea6, 69px 69px #8c9ea6, 70px 70px #8c9ea6, 71px 71px #8c9ea6, 72px 72px #8c9ea6, 73px 73px #8c9ea6, 74px 74px #8c9ea6, 75px 75px #8c9ea6, 76px 76px #8c9ea6, 77px 77px #8c9ea6, 78px 78px #8c9ea6, 79px 79px #8c9ea6, 80px 80px #8c9ea6, 81px 81px #8c9ea6, 82px 82px #8c9ea6, 83px 83px #8c9ea6, 84px 84px #8c9ea6, 85px 85px #8c9ea6;
+}
+
+.btn-longshadow.btn-secondary:active,
+.btn-longshadow.btn-secondary.active,
+.btn-longshadow.btn-secondary.is-active,
+.btn-longshadow-right.btn-secondary:active,
+.btn-longshadow-right.btn-secondary.active,
+.btn-longshadow-right.btn-secondary.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/*
+* Shadow Left
+*
+*/
+
+.btn-longshadow-left {
+  overflow: hidden;
+}
+
+.btn-longshadow-left.btn-primary {
+  text-shadow: 0px 0px #2f71a9, -1px 1px #2f71a9, -2px 2px #2f71a9, -3px 3px #2f71a9, -4px 4px #2f71a9, -5px 5px #2f71a9, -6px 6px #2f71a9, -7px 7px #2f71a9, -8px 8px #2f71a9, -9px 9px #2f71a9, -10px 10px #2f71a9, -11px 11px #2f71a9, -12px 12px #2f71a9, -13px 13px #2f71a9, -14px 14px #2f71a9, -15px 15px #2f71a9, -16px 16px #2f71a9, -17px 17px #2f71a9, -18px 18px #2f71a9, -19px 19px #2f71a9, -20px 20px #2f71a9, -21px 21px #2f71a9, -22px 22px #2f71a9, -23px 23px #2f71a9, -24px 24px #2f71a9, -25px 25px #2f71a9, -26px 26px #2f71a9, -27px 27px #2f71a9, -28px 28px #2f71a9, -29px 29px #2f71a9, -30px 30px #2f71a9, -31px 31px #2f71a9, -32px 32px #2f71a9, -33px 33px #2f71a9, -34px 34px #2f71a9, -35px 35px #2f71a9, -36px 36px #2f71a9, -37px 37px #2f71a9, -38px 38px #2f71a9, -39px 39px #2f71a9, -40px 40px #2f71a9, -41px 41px #2f71a9, -42px 42px #2f71a9, -43px 43px #2f71a9, -44px 44px #2f71a9, -45px 45px #2f71a9, -46px 46px #2f71a9, -47px 47px #2f71a9, -48px 48px #2f71a9, -49px 49px #2f71a9, -50px 50px #2f71a9, -51px 51px #2f71a9, -52px 52px #2f71a9, -53px 53px #2f71a9, -54px 54px #2f71a9, -55px 55px #2f71a9, -56px 56px #2f71a9, -57px 57px #2f71a9, -58px 58px #2f71a9, -59px 59px #2f71a9, -60px 60px #2f71a9, -61px 61px #2f71a9, -62px 62px #2f71a9, -63px 63px #2f71a9, -64px 64px #2f71a9, -65px 65px #2f71a9, -66px 66px #2f71a9, -67px 67px #2f71a9, -68px 68px #2f71a9, -69px 69px #2f71a9, -70px 70px #2f71a9, -71px 71px #2f71a9, -72px 72px #2f71a9, -73px 73px #2f71a9, -74px 74px #2f71a9, -75px 75px #2f71a9, -76px 76px #2f71a9, -77px 77px #2f71a9, -78px 78px #2f71a9, -79px 79px #2f71a9, -80px 80px #2f71a9, -81px 81px #2f71a9, -82px 82px #2f71a9, -83px 83px #2f71a9, -84px 84px #2f71a9, -85px 85px #2f71a9;
+}
+
+.btn-longshadow-left.btn-primary:active,
+.btn-longshadow-left.btn-primary.active,
+.btn-longshadow-left.btn-primary.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-success {
+  text-shadow: 0px 0px #008966, -1px 1px #008966, -2px 2px #008966, -3px 3px #008966, -4px 4px #008966, -5px 5px #008966, -6px 6px #008966, -7px 7px #008966, -8px 8px #008966, -9px 9px #008966, -10px 10px #008966, -11px 11px #008966, -12px 12px #008966, -13px 13px #008966, -14px 14px #008966, -15px 15px #008966, -16px 16px #008966, -17px 17px #008966, -18px 18px #008966, -19px 19px #008966, -20px 20px #008966, -21px 21px #008966, -22px 22px #008966, -23px 23px #008966, -24px 24px #008966, -25px 25px #008966, -26px 26px #008966, -27px 27px #008966, -28px 28px #008966, -29px 29px #008966, -30px 30px #008966, -31px 31px #008966, -32px 32px #008966, -33px 33px #008966, -34px 34px #008966, -35px 35px #008966, -36px 36px #008966, -37px 37px #008966, -38px 38px #008966, -39px 39px #008966, -40px 40px #008966, -41px 41px #008966, -42px 42px #008966, -43px 43px #008966, -44px 44px #008966, -45px 45px #008966, -46px 46px #008966, -47px 47px #008966, -48px 48px #008966, -49px 49px #008966, -50px 50px #008966, -51px 51px #008966, -52px 52px #008966, -53px 53px #008966, -54px 54px #008966, -55px 55px #008966, -56px 56px #008966, -57px 57px #008966, -58px 58px #008966, -59px 59px #008966, -60px 60px #008966, -61px 61px #008966, -62px 62px #008966, -63px 63px #008966, -64px 64px #008966, -65px 65px #008966, -66px 66px #008966, -67px 67px #008966, -68px 68px #008966, -69px 69px #008966, -70px 70px #008966, -71px 71px #008966, -72px 72px #008966, -73px 73px #008966, -74px 74px #008966, -75px 75px #008966, -76px 76px #008966, -77px 77px #008966, -78px 78px #008966, -79px 79px #008966, -80px 80px #008966, -81px 81px #008966, -82px 82px #008966, -83px 83px #008966, -84px 84px #008966, -85px 85px #008966;
+}
+
+.btn-longshadow-left.btn-success:active,
+.btn-longshadow-left.btn-success.active,
+.btn-longshadow-left.btn-success.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-info {
+  text-shadow: 0px 0px #3db5d6, -1px 1px #3db5d6, -2px 2px #3db5d6, -3px 3px #3db5d6, -4px 4px #3db5d6, -5px 5px #3db5d6, -6px 6px #3db5d6, -7px 7px #3db5d6, -8px 8px #3db5d6, -9px 9px #3db5d6, -10px 10px #3db5d6, -11px 11px #3db5d6, -12px 12px #3db5d6, -13px 13px #3db5d6, -14px 14px #3db5d6, -15px 15px #3db5d6, -16px 16px #3db5d6, -17px 17px #3db5d6, -18px 18px #3db5d6, -19px 19px #3db5d6, -20px 20px #3db5d6, -21px 21px #3db5d6, -22px 22px #3db5d6, -23px 23px #3db5d6, -24px 24px #3db5d6, -25px 25px #3db5d6, -26px 26px #3db5d6, -27px 27px #3db5d6, -28px 28px #3db5d6, -29px 29px #3db5d6, -30px 30px #3db5d6, -31px 31px #3db5d6, -32px 32px #3db5d6, -33px 33px #3db5d6, -34px 34px #3db5d6, -35px 35px #3db5d6, -36px 36px #3db5d6, -37px 37px #3db5d6, -38px 38px #3db5d6, -39px 39px #3db5d6, -40px 40px #3db5d6, -41px 41px #3db5d6, -42px 42px #3db5d6, -43px 43px #3db5d6, -44px 44px #3db5d6, -45px 45px #3db5d6, -46px 46px #3db5d6, -47px 47px #3db5d6, -48px 48px #3db5d6, -49px 49px #3db5d6, -50px 50px #3db5d6, -51px 51px #3db5d6, -52px 52px #3db5d6, -53px 53px #3db5d6, -54px 54px #3db5d6, -55px 55px #3db5d6, -56px 56px #3db5d6, -57px 57px #3db5d6, -58px 58px #3db5d6, -59px 59px #3db5d6, -60px 60px #3db5d6, -61px 61px #3db5d6, -62px 62px #3db5d6, -63px 63px #3db5d6, -64px 64px #3db5d6, -65px 65px #3db5d6, -66px 66px #3db5d6, -67px 67px #3db5d6, -68px 68px #3db5d6, -69px 69px #3db5d6, -70px 70px #3db5d6, -71px 71px #3db5d6, -72px 72px #3db5d6, -73px 73px #3db5d6, -74px 74px #3db5d6, -75px 75px #3db5d6, -76px 76px #3db5d6, -77px 77px #3db5d6, -78px 78px #3db5d6, -79px 79px #3db5d6, -80px 80px #3db5d6, -81px 81px #3db5d6, -82px 82px #3db5d6, -83px 83px #3db5d6, -84px 84px #3db5d6, -85px 85px #3db5d6;
+}
+
+.btn-longshadow-left.btn-info:active,
+.btn-longshadow-left.btn-info.active,
+.btn-longshadow-left.btn-info.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-warning {
+  text-shadow: 0px 0px #d37e06, -1px 1px #d37e06, -2px 2px #d37e06, -3px 3px #d37e06, -4px 4px #d37e06, -5px 5px #d37e06, -6px 6px #d37e06, -7px 7px #d37e06, -8px 8px #d37e06, -9px 9px #d37e06, -10px 10px #d37e06, -11px 11px #d37e06, -12px 12px #d37e06, -13px 13px #d37e06, -14px 14px #d37e06, -15px 15px #d37e06, -16px 16px #d37e06, -17px 17px #d37e06, -18px 18px #d37e06, -19px 19px #d37e06, -20px 20px #d37e06, -21px 21px #d37e06, -22px 22px #d37e06, -23px 23px #d37e06, -24px 24px #d37e06, -25px 25px #d37e06, -26px 26px #d37e06, -27px 27px #d37e06, -28px 28px #d37e06, -29px 29px #d37e06, -30px 30px #d37e06, -31px 31px #d37e06, -32px 32px #d37e06, -33px 33px #d37e06, -34px 34px #d37e06, -35px 35px #d37e06, -36px 36px #d37e06, -37px 37px #d37e06, -38px 38px #d37e06, -39px 39px #d37e06, -40px 40px #d37e06, -41px 41px #d37e06, -42px 42px #d37e06, -43px 43px #d37e06, -44px 44px #d37e06, -45px 45px #d37e06, -46px 46px #d37e06, -47px 47px #d37e06, -48px 48px #d37e06, -49px 49px #d37e06, -50px 50px #d37e06, -51px 51px #d37e06, -52px 52px #d37e06, -53px 53px #d37e06, -54px 54px #d37e06, -55px 55px #d37e06, -56px 56px #d37e06, -57px 57px #d37e06, -58px 58px #d37e06, -59px 59px #d37e06, -60px 60px #d37e06, -61px 61px #d37e06, -62px 62px #d37e06, -63px 63px #d37e06, -64px 64px #d37e06, -65px 65px #d37e06, -66px 66px #d37e06, -67px 67px #d37e06, -68px 68px #d37e06, -69px 69px #d37e06, -70px 70px #d37e06, -71px 71px #d37e06, -72px 72px #d37e06, -73px 73px #d37e06, -74px 74px #d37e06, -75px 75px #d37e06, -76px 76px #d37e06, -77px 77px #d37e06, -78px 78px #d37e06, -79px 79px #d37e06, -80px 80px #d37e06, -81px 81px #d37e06, -82px 82px #d37e06, -83px 83px #d37e06, -84px 84px #d37e06, -85px 85px #d37e06;
+}
+
+.btn-longshadow-left.btn-warning:active,
+.btn-longshadow-left.btn-warning.active,
+.btn-longshadow-left.btn-warning.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-danger {
+  text-shadow: 0px 0px #ea423e, -1px 1px #ea423e, -2px 2px #ea423e, -3px 3px #ea423e, -4px 4px #ea423e, -5px 5px #ea423e, -6px 6px #ea423e, -7px 7px #ea423e, -8px 8px #ea423e, -9px 9px #ea423e, -10px 10px #ea423e, -11px 11px #ea423e, -12px 12px #ea423e, -13px 13px #ea423e, -14px 14px #ea423e, -15px 15px #ea423e, -16px 16px #ea423e, -17px 17px #ea423e, -18px 18px #ea423e, -19px 19px #ea423e, -20px 20px #ea423e, -21px 21px #ea423e, -22px 22px #ea423e, -23px 23px #ea423e, -24px 24px #ea423e, -25px 25px #ea423e, -26px 26px #ea423e, -27px 27px #ea423e, -28px 28px #ea423e, -29px 29px #ea423e, -30px 30px #ea423e, -31px 31px #ea423e, -32px 32px #ea423e, -33px 33px #ea423e, -34px 34px #ea423e, -35px 35px #ea423e, -36px 36px #ea423e, -37px 37px #ea423e, -38px 38px #ea423e, -39px 39px #ea423e, -40px 40px #ea423e, -41px 41px #ea423e, -42px 42px #ea423e, -43px 43px #ea423e, -44px 44px #ea423e, -45px 45px #ea423e, -46px 46px #ea423e, -47px 47px #ea423e, -48px 48px #ea423e, -49px 49px #ea423e, -50px 50px #ea423e, -51px 51px #ea423e, -52px 52px #ea423e, -53px 53px #ea423e, -54px 54px #ea423e, -55px 55px #ea423e, -56px 56px #ea423e, -57px 57px #ea423e, -58px 58px #ea423e, -59px 59px #ea423e, -60px 60px #ea423e, -61px 61px #ea423e, -62px 62px #ea423e, -63px 63px #ea423e, -64px 64px #ea423e, -65px 65px #ea423e, -66px 66px #ea423e, -67px 67px #ea423e, -68px 68px #ea423e, -69px 69px #ea423e, -70px 70px #ea423e, -71px 71px #ea423e, -72px 72px #ea423e, -73px 73px #ea423e, -74px 74px #ea423e, -75px 75px #ea423e, -76px 76px #ea423e, -77px 77px #ea423e, -78px 78px #ea423e, -79px 79px #ea423e, -80px 80px #ea423e, -81px 81px #ea423e, -82px 82px #ea423e, -83px 83px #ea423e, -84px 84px #ea423e, -85px 85px #ea423e;
+}
+
+.btn-longshadow-left.btn-danger:active,
+.btn-longshadow-left.btn-danger.active,
+.btn-longshadow-left.btn-danger.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-light {
+  text-shadow: 0px 0px #dae0e5, -1px 1px #dae0e5, -2px 2px #dae0e5, -3px 3px #dae0e5, -4px 4px #dae0e5, -5px 5px #dae0e5, -6px 6px #dae0e5, -7px 7px #dae0e5, -8px 8px #dae0e5, -9px 9px #dae0e5, -10px 10px #dae0e5, -11px 11px #dae0e5, -12px 12px #dae0e5, -13px 13px #dae0e5, -14px 14px #dae0e5, -15px 15px #dae0e5, -16px 16px #dae0e5, -17px 17px #dae0e5, -18px 18px #dae0e5, -19px 19px #dae0e5, -20px 20px #dae0e5, -21px 21px #dae0e5, -22px 22px #dae0e5, -23px 23px #dae0e5, -24px 24px #dae0e5, -25px 25px #dae0e5, -26px 26px #dae0e5, -27px 27px #dae0e5, -28px 28px #dae0e5, -29px 29px #dae0e5, -30px 30px #dae0e5, -31px 31px #dae0e5, -32px 32px #dae0e5, -33px 33px #dae0e5, -34px 34px #dae0e5, -35px 35px #dae0e5, -36px 36px #dae0e5, -37px 37px #dae0e5, -38px 38px #dae0e5, -39px 39px #dae0e5, -40px 40px #dae0e5, -41px 41px #dae0e5, -42px 42px #dae0e5, -43px 43px #dae0e5, -44px 44px #dae0e5, -45px 45px #dae0e5, -46px 46px #dae0e5, -47px 47px #dae0e5, -48px 48px #dae0e5, -49px 49px #dae0e5, -50px 50px #dae0e5, -51px 51px #dae0e5, -52px 52px #dae0e5, -53px 53px #dae0e5, -54px 54px #dae0e5, -55px 55px #dae0e5, -56px 56px #dae0e5, -57px 57px #dae0e5, -58px 58px #dae0e5, -59px 59px #dae0e5, -60px 60px #dae0e5, -61px 61px #dae0e5, -62px 62px #dae0e5, -63px 63px #dae0e5, -64px 64px #dae0e5, -65px 65px #dae0e5, -66px 66px #dae0e5, -67px 67px #dae0e5, -68px 68px #dae0e5, -69px 69px #dae0e5, -70px 70px #dae0e5, -71px 71px #dae0e5, -72px 72px #dae0e5, -73px 73px #dae0e5, -74px 74px #dae0e5, -75px 75px #dae0e5, -76px 76px #dae0e5, -77px 77px #dae0e5, -78px 78px #dae0e5, -79px 79px #dae0e5, -80px 80px #dae0e5, -81px 81px #dae0e5, -82px 82px #dae0e5, -83px 83px #dae0e5, -84px 84px #dae0e5, -85px 85px #dae0e5;
+}
+
+.btn-longshadow-left.btn-light:active,
+.btn-longshadow-left.btn-light.active,
+.btn-longshadow-left.btn-light.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-dark {
+  text-shadow: 0px 0px #1d2124, -1px 1px #1d2124, -2px 2px #1d2124, -3px 3px #1d2124, -4px 4px #1d2124, -5px 5px #1d2124, -6px 6px #1d2124, -7px 7px #1d2124, -8px 8px #1d2124, -9px 9px #1d2124, -10px 10px #1d2124, -11px 11px #1d2124, -12px 12px #1d2124, -13px 13px #1d2124, -14px 14px #1d2124, -15px 15px #1d2124, -16px 16px #1d2124, -17px 17px #1d2124, -18px 18px #1d2124, -19px 19px #1d2124, -20px 20px #1d2124, -21px 21px #1d2124, -22px 22px #1d2124, -23px 23px #1d2124, -24px 24px #1d2124, -25px 25px #1d2124, -26px 26px #1d2124, -27px 27px #1d2124, -28px 28px #1d2124, -29px 29px #1d2124, -30px 30px #1d2124, -31px 31px #1d2124, -32px 32px #1d2124, -33px 33px #1d2124, -34px 34px #1d2124, -35px 35px #1d2124, -36px 36px #1d2124, -37px 37px #1d2124, -38px 38px #1d2124, -39px 39px #1d2124, -40px 40px #1d2124, -41px 41px #1d2124, -42px 42px #1d2124, -43px 43px #1d2124, -44px 44px #1d2124, -45px 45px #1d2124, -46px 46px #1d2124, -47px 47px #1d2124, -48px 48px #1d2124, -49px 49px #1d2124, -50px 50px #1d2124, -51px 51px #1d2124, -52px 52px #1d2124, -53px 53px #1d2124, -54px 54px #1d2124, -55px 55px #1d2124, -56px 56px #1d2124, -57px 57px #1d2124, -58px 58px #1d2124, -59px 59px #1d2124, -60px 60px #1d2124, -61px 61px #1d2124, -62px 62px #1d2124, -63px 63px #1d2124, -64px 64px #1d2124, -65px 65px #1d2124, -66px 66px #1d2124, -67px 67px #1d2124, -68px 68px #1d2124, -69px 69px #1d2124, -70px 70px #1d2124, -71px 71px #1d2124, -72px 72px #1d2124, -73px 73px #1d2124, -74px 74px #1d2124, -75px 75px #1d2124, -76px 76px #1d2124, -77px 77px #1d2124, -78px 78px #1d2124, -79px 79px #1d2124, -80px 80px #1d2124, -81px 81px #1d2124, -82px 82px #1d2124, -83px 83px #1d2124, -84px 84px #1d2124, -85px 85px #1d2124;
+}
+
+.btn-longshadow-left.btn-dark:active,
+.btn-longshadow-left.btn-dark.active,
+.btn-longshadow-left.btn-dark.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-longshadow-left.btn-secondary {
+  text-shadow: 0px 0px #8c9ea6, -1px 1px #8c9ea6, -2px 2px #8c9ea6, -3px 3px #8c9ea6, -4px 4px #8c9ea6, -5px 5px #8c9ea6, -6px 6px #8c9ea6, -7px 7px #8c9ea6, -8px 8px #8c9ea6, -9px 9px #8c9ea6, -10px 10px #8c9ea6, -11px 11px #8c9ea6, -12px 12px #8c9ea6, -13px 13px #8c9ea6, -14px 14px #8c9ea6, -15px 15px #8c9ea6, -16px 16px #8c9ea6, -17px 17px #8c9ea6, -18px 18px #8c9ea6, -19px 19px #8c9ea6, -20px 20px #8c9ea6, -21px 21px #8c9ea6, -22px 22px #8c9ea6, -23px 23px #8c9ea6, -24px 24px #8c9ea6, -25px 25px #8c9ea6, -26px 26px #8c9ea6, -27px 27px #8c9ea6, -28px 28px #8c9ea6, -29px 29px #8c9ea6, -30px 30px #8c9ea6, -31px 31px #8c9ea6, -32px 32px #8c9ea6, -33px 33px #8c9ea6, -34px 34px #8c9ea6, -35px 35px #8c9ea6, -36px 36px #8c9ea6, -37px 37px #8c9ea6, -38px 38px #8c9ea6, -39px 39px #8c9ea6, -40px 40px #8c9ea6, -41px 41px #8c9ea6, -42px 42px #8c9ea6, -43px 43px #8c9ea6, -44px 44px #8c9ea6, -45px 45px #8c9ea6, -46px 46px #8c9ea6, -47px 47px #8c9ea6, -48px 48px #8c9ea6, -49px 49px #8c9ea6, -50px 50px #8c9ea6, -51px 51px #8c9ea6, -52px 52px #8c9ea6, -53px 53px #8c9ea6, -54px 54px #8c9ea6, -55px 55px #8c9ea6, -56px 56px #8c9ea6, -57px 57px #8c9ea6, -58px 58px #8c9ea6, -59px 59px #8c9ea6, -60px 60px #8c9ea6, -61px 61px #8c9ea6, -62px 62px #8c9ea6, -63px 63px #8c9ea6, -64px 64px #8c9ea6, -65px 65px #8c9ea6, -66px 66px #8c9ea6, -67px 67px #8c9ea6, -68px 68px #8c9ea6, -69px 69px #8c9ea6, -70px 70px #8c9ea6, -71px 71px #8c9ea6, -72px 72px #8c9ea6, -73px 73px #8c9ea6, -74px 74px #8c9ea6, -75px 75px #8c9ea6, -76px 76px #8c9ea6, -77px 77px #8c9ea6, -78px 78px #8c9ea6, -79px 79px #8c9ea6, -80px 80px #8c9ea6, -81px 81px #8c9ea6, -82px 82px #8c9ea6, -83px 83px #8c9ea6, -84px 84px #8c9ea6, -85px 85px #8c9ea6;
+}
+
+.btn-longshadow-left.btn-secondary:active,
+.btn-longshadow-left.btn-secondary.active,
+.btn-longshadow-left.btn-secondary.is-active {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/*
+ * Social Buttons for Bootstrap
+ *
+ * Copyright 2013-2016 Panayiotis Lipiridis
+ * Licensed under the MIT License
+ *
+ * https://github.com/lipis/bootstrap-social
+ */
+
+.btn-adn {
+  color: white;
+  background-color: #d87a68;
+}
+
+.btn-bitbucket {
+  color: white;
+  background-color: #205081;
+}
+
+.btn-dropbox {
+  color: white;
+  background-color: #1087dd;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+
+.btn-flickr {
+  color: white;
+  background-color: #ff0084;
+}
+
+.btn-foursquare {
+  color: white;
+  background-color: #f94877;
+}
+
+.btn-github {
+  color: white;
+  background-color: #444444;
+}
+
+.btn-google {
+  color: white;
+  background-color: #dd4b39;
+}
+
+.btn-instagram {
+  color: white;
+  background-color: #3f729b;
+}
+
+.btn-linkedin {
+  color: white;
+  background-color: #007bb6;
+}
+
+.btn-microsoft {
+  color: white;
+  background-color: #2672ec;
+}
+
+.btn-odnoklassniki {
+  color: white;
+  background-color: #f4731c;
+}
+
+.btn-openid {
+  color: white;
+  background-color: #f7931e;
+}
+
+.btn-pinterest {
+  color: white;
+  background-color: #cb2027;
+}
+
+.btn-reddit {
+  color: white;
+  background-color: #eff7ff;
+}
+
+.btn-soundcloud {
+  color: white;
+  background-color: #ff5500;
+}
+
+.btn-tumblr {
+  color: white;
+  background-color: #2c4762;
+}
+
+.btn-twitter {
+  color: white;
+  background-color: #55acee;
+}
+
+.btn-vimeo {
+  color: white;
+  background-color: #1ab7ea;
+}
+
+.btn-vk {
+  color: white;
+  background-color: #587ea3;
+}
+
+.btn-yahoo {
+  color: white;
+  background-color: #720e9e;
+}
+
+.btn-outline-adn {
+  color: #d87a68;
+  border-color: #d87a68;
+  background: white;
+}
+
+.btn-outline-bitbucket {
+  color: #205081;
+  border-color: #205081;
+  background: white;
+}
+
+.btn-outline-dropbox {
+  color: #1087dd;
+  border-color: #1087dd;
+  background: white;
+}
+
+.btn-outline-facebook {
+  color: #3b5998;
+  border-color: #3b5998;
+  background: white;
+}
+
+.btn-outline-flickr {
+  color: #ff0084;
+  border-color: #ff0084;
+  background: white;
+}
+
+.btn-outline-foursquare {
+  color: #f94877;
+  border-color: #f94877;
+  background: white;
+}
+
+.btn-outline-github {
+  color: #444444;
+  border-color: #444444;
+  background: white;
+}
+
+.btn-outline-google {
+  color: #dd4b39;
+  border-color: #dd4b39;
+  background: white;
+}
+
+.btn-outline-instagram {
+  color: #3f729b;
+  border-color: #3f729b;
+  background: white;
+}
+
+.btn-outline-linkedin {
+  color: #007bb6;
+  border-color: #007bb6;
+  background: white;
+}
+
+.btn-outline-microsoft {
+  color: #2672ec;
+  border-color: #2672ec;
+  background: white;
+}
+
+.btn-outline-odnoklassniki {
+  color: #f4731c;
+  border-color: #f4731c;
+  background: white;
+}
+
+.btn-outline-openid {
+  color: #f7931e;
+  border-color: #f7931e;
+  background: white;
+}
+
+.btn-outline-pinterest {
+  color: #cb2027;
+  border-color: #cb2027;
+  background: white;
+}
+
+.btn-outline-reddit {
+  color: #eff7ff;
+  border-color: #eff7ff;
+  background: white;
+}
+
+.btn-outline-soundcloud {
+  color: #ff5500;
+  border-color: #ff5500;
+  background: white;
+}
+
+.btn-outline-tumblr {
+  color: #2c4762;
+  border-color: #2c4762;
+  background: white;
+}
+
+.btn-outline-twitter {
+  color: #55acee;
+  border-color: #55acee;
+  background: white;
+}
+
+.btn-outline-vimeo {
+  color: #1ab7ea;
+  border-color: #1ab7ea;
+  background: white;
+}
+
+.btn-outline-vk {
+  color: #587ea3;
+  border-color: #587ea3;
+  background: white;
+}
+
+.btn-outline-yahoo {
+  color: #720e9e;
+  border-color: #720e9e;
+  background: white;
+}
+
+.ui-group-buttons .or {
+  position: relative;
+  float: left;
+  width: 0.3em;
+  height: 1.3em;
+  z-index: 3;
+  font-size: 12px;
+}
+
+.ui-group-buttons .or:before {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  content: "or";
+  background-color: #5a5a5a;
+  margin-top: -0.1em;
+  margin-left: -0.9em;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.55;
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 500px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.ui-group-buttons .or:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  width: 0.3em;
+  height: 3.1em;
+  background-color: #5a5a5a;
+  border-top: 0.6em solid #5a5a5a;
+  border-bottom: 0.6em solid #5a5a5a;
+}
+
+.ui-group-buttons {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ui-group-buttons:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.ui-group-buttons .btn {
+  float: left;
+  border-radius: 0;
+}
+
+.ui-group-buttons .btn:first-child {
+  margin-left: 0;
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+  padding-right: 15px;
+  padding-left: 6px;
+}
+
+.ui-group-buttons .btn:last-child {
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  padding-left: 15px;
+}
+
+.btn-label {
+  position: relative;
+  left: -12px;
+  display: inline-block;
+  padding: 6px 15px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.f {
+  font-size: 60px;
+  text-align: right;
+  position: absolute;
+  top: 7px;
+  right: 27px;
+  outline: none;
+}
+
+/* Facebook */
+
+a.facebook-like i,
+.facebook-like h4.list-group-item-heading {
+  color: #3b5998;
+}
+
+a.facebook-like:hover {
+  background-color: #3b5998;
+}
+
+a.facebook-like:hover * {
+  color: #FFF;
+}
+
+/* Twitter */
+
+a.twitter i,
+.twitter h4.list-group-item-heading {
+  color: #55acee;
+}
+
+a.twitter:hover {
+  background-color: #55acee;
+}
+
+a.twitter:hover * {
+  color: #FFF;
+}
+
+/* Linkedin */
+
+a.linkedin i,
+.linkedin h4.list-group-item-heading {
+  color: #007bb6;
+}
+
+a.linkedin:hover {
+  background-color: #007bb6;
+}
+
+a.linkedin:hover * {
+  color: #FFF;
+}
+
+/* Tumblr */
+
+a.tumblr i,
+.tumblr h4.list-group-item-heading {
+  color: #2c4762;
+}
+
+a.tumblr:hover {
+  background-color: #2c4762;
+}
+
+a.tumblr:hover * {
+  color: #FFF;
+}
+
+/* Youtube */
+
+a.youtube i,
+.youtube h4.list-group-item-heading {
+  color: #EF6F6C;
+}
+
+a.youtube:hover {
+  background-color: #EF6F6C;
+}
+
+a.youtube:hover * {
+  color: #FFF;
+}
+
+/* Vimeo */
+
+a.vimeo i,
+.vimeo h4.list-group-item-heading {
+  color: #67C5DF;
+}
+
+a.vimeo:hover {
+  background-color: #67C5DF;
+}
+
+a.vimeo:hover * {
+  color: #FFF;
+}
+

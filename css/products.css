@@ -1,0 +1,10 @@
+.product {
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.product_submit {
+    background-color: #06a505;
+    border-radius: 7px;
+    color: white;
+}

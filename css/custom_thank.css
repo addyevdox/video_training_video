@@ -1,0 +1,18 @@
+.thank_body {
+
+    position: relative;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+
+}
+
+.thank_item {
+
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
