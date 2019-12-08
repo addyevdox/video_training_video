@@ -53,10 +53,10 @@
 
                                             <div class="col-6">
                                                 <a class="fancybox-effects-a"
-                                                   href="{{ asset('uploads/videos/'.$video->video) }}"
+                                                   href="{{ asset('consultant/public/uploads/videos/'.$video->video) }}"
                                                    title="Click aside to exit popup">
                                                     <video class="img-fluid gallery-style" controls>
-                                                        <source src="{{ asset('uploads/videos/'.$video->video) }}" >
+                                                        <source src="{{ asset('consultant/public/uploads/videos/'.$video->video) }}" >
                                                     </video>
                                                 </a>
                                             </div>

@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="form-group {{ $errors->first('email', 'has-error') }}">
                                         <div class="row">
-                                            <label for="userid" class="col-sm-2 control-label">Email *</label>
+                                            <label for="userid" class="col-sm-2 control-label">Email </label>
                                             <div class="col-sm-10">
                                                 <input id="email" name="userid" placeholder="E-mail" type="text"
                                                        class="form-control required email"

@@ -28,12 +28,13 @@ class UsersController extends JoshController
      *
      * @return View
      */
-    private $user_activation = false;
+    private $user_activation = true;
 
     public function index()
     {
 
         // Show the page
+        $users = User::all();
         return view('admin.users.index', compact('users'));
     }
 
@@ -477,25 +478,25 @@ class UsersController extends JoshController
             if ( ! empty( $users ) && $users->count() ) {
                 foreach ( $users->toArray() as $key => $row ) {
                     $my_data = [
-                      'email' => $row['email'],
+                      'email' => $row['userid'],
                        'first_name' => $row['first_name'],
                         'last_name' => $row['last_name'],
                          'password' => $row['password'],
                     ];
                      $validator = Validator::make($my_data, [
-                         'email' => 'email',
+                         'email' => 'required|numeric',
                          'first_name' => 'required|min:3',
                          'last_name' => 'required|min:3',
                          'password' => 'required|min:3'
                     ]);
                     if (isset( $row['first_name'] ) && trim($row['first_name']) !="" && !$validator->fails()) {
                         $selected_user = User::where([
-                                ['email' , $row['email']]
+                                ['email' , $row['userid']]
                             ])->first();
 
                         if($selected_user){
                             $user = $selected_user->update([
-                                'email'         => $row['email'],
+                                'email'         => $row['userid'],
                                 'first_name'         => $row['first_name'],
                                 'last_name'            => $row['last_name'],
                                 'password'            => Hash::make($row['password']),
@@ -511,7 +512,7 @@ class UsersController extends JoshController
                         else{
                             $user = Sentinel::register(
                             [
-                                'email'         => $row['email'],
+                                'email'         => $row['userid'],
                                 'first_name'         => $row['first_name'],
                                 'last_name'            => $row['last_name'],
                                 'password'            => Hash::make($row['password']),

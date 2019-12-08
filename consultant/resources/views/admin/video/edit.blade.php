@@ -64,7 +64,7 @@
                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail" style="max-width: 200px; max-height: 200px;">
                                     <video class="img-fluid" controls>
-                                        <source src="{{URL::to('uploads/videos/'.$video->video)}}">
+                                        <source src="{{URL::to('consultant/public/uploads/videos/'.$video->video)}}">
                                     </video>
                                 </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>

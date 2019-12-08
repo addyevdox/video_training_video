@@ -111,7 +111,7 @@
 
                                         <div class="form-group {{ $errors->first('userid', 'has-error') }}">
                                             <div class="row">
-                                                <label for="userid" class="col-sm-2 control-label">Email *</label>
+                                                <label for="userid" class="col-sm-2 control-label">Email </label>
                                                 <div class="col-sm-10">
                                                     <input id="userid" name="userid" placeholder="E-mail" type="text"
                                                            class="form-control required email"
@@ -151,7 +151,7 @@
                                         <h2 class="hidden">&nbsp;</h2>
                                         <div class="form-group {{ $errors->first('address', 'has-error') }}">
                                             <div class="row">
-                                                <label for="address" class="col-sm-2 control-label">Address</label>
+                                                <label for="address" class="col-sm-2 control-label">Address </label>
                                                 <div class="col-sm-10">
                                                     <input id="address" name="address" placeholder="Address" type="text"
                                                            class="form-control required email"
@@ -162,7 +162,7 @@
                                         </div>
                                         <div class="form-group {{ $errors->first('pic_file', 'has-error') }}">
                                             <div class="row">
-                                                <label class="col-sm-2 control-label">Profile picture</label>
+                                                <label class="col-sm-2 control-label">Profile picture </label>
                                                 <div class="col-sm-10">
                                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                                         <div class="fileinput-new thumbnail"

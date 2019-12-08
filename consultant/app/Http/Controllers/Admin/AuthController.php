@@ -75,7 +75,8 @@ class AuthController extends JoshController
         }
 
         // Ooops.. something went wrong
-        return Redirect::back()->withInput()->withErrors($this->messageBag);
+        //return Redirect::back()->withInput()->withErrors($this->messageBag);
+        return redirect('admin/login')->with('error', 'User Id or password is incorrect.');
     }
 
     /**
@@ -288,34 +289,5 @@ class AuthController extends JoshController
      *
      * @return Redirect
      */
-    public function postRegister2(UserRequest $request)
-    {
-
-        try {
-            // Register the user
-            $user = Sentinel::registerAndActivate(array(
-                'first_name' => $request->get('first_name'),
-                'last_name' => $request->get('last_name'),
-                'email' => $request->get('email'),
-                'password' => $request->get('password'),
-            ));
-
-            //add user to 'User' group
-            $role = Sentinel::findRoleById(2);
-            $role->users()->attach($user);
-
-            // Log the user in
-            Sentinel::login($user, false);
-
-            // Redirect to the home page with success menu
-            return Redirect::route("admin.dashboard")->with('success', trans('auth/message.signup.success'));
-
-        } catch (UserExistsException $e) {
-            $this->messageBag->add('email', trans('auth/message.account_already_exists'));
-        }
-
-        // Ooops.. something went wrong
-        return Redirect::back()->withInput()->withErrors($this->messageBag);
-    }
 
 }

@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function () {
     Route::get('login', 'AuthController@getSignin')->name('login');
     Route::get('signin', 'AuthController@getSignin')->name('signin');
     Route::post('signin', 'AuthController@postSignin')->name('postSignin');
-    Route::post('signup', 'AuthController@postSignup')->name('admin.signup');
+//    Route::post('signup', 'AuthController@postSignup')->name('admin.signup');
     Route::post('forgot-password', 'AuthController@postForgotPassword')->name('forgot-password');
     Route::get('login2', function () {
         return view('admin/login2');

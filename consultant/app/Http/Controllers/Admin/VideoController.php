@@ -9,6 +9,7 @@ use App\Models\Video;
 use App\Models\VideoQuestion;
 use App\Models\VideoReply;
 use App\Models\VideoComment;
+use Mockery\Exception;
 use Sentinel;
 use DOMDocument;
 
@@ -189,8 +190,16 @@ class VideoController extends Controller
 
     public function file_delete($file_path) {
 
-        $result = unlink(public_path()."/uploads/vidoes/".$file_path);
-            return $result;
+        try{
+
+            $result = unlink(public_path()."/uploads/videos/".$file_path);
+        }
+        catch (Exception $e) {
+
+            return false;
+        }
+
+            return true;
     }
 }
 
