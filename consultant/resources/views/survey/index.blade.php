@@ -51,14 +51,14 @@
                     <div class="card-body">
                         <div class="table-responsive-lg table-responsive-md table-responsive-sm">
                             <div class="tab-pane fade show active p-3">
-                                {!! Form::open(array('url' => URL::to('survey/reply'), 'method' => 'post', 'class' => 'bf', 'files'=> true)) !!}
-
+                                {!! Form::open(array('url' => URL::to('survey/store'), 'method' => 'post', 'class' => 'bf', 'files'=> true)) !!}
+                                    <input type="hidden" name="video_id" value="{{$questions[0]->video_id}}">
                                     @forelse( $questions as $question)
                                         <h3>{{$question->question}}</h3>
                                         @forelse($question->answer as $answer)
                                             <div class="row ml-3">
                                                 <label class="block">
-                                                    <input type="radio" name="{{$answer->question_id}}" value="{{$answer->answer}}">
+                                                    <input type="radio" name="{{$answer->question_id}}" value="{{$answer->answer}}" checked>
                                                     {{$answer->answer}}
                                                 </label>
 

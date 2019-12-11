@@ -54,10 +54,9 @@ class VideoController extends Controller
             'video' => 'required'
         ]);
 
-        $message=$request->get('description');
 
-        $message = str_replace('<p>'," ", $message);
-        $message = str_replace('</p>', " ", $message);
+        $message=$request->get('description');
+//        echo $message;die();
         $dom = new DOMDocument();
         $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 

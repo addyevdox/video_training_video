@@ -35,7 +35,7 @@ class SurveyAnsController extends Controller
         if($answer_count < 5)
         {
             $answer->save();
-            return redirect('admin/answer/'.$answer->question_id)->with('success',trans('video/message.success.create'));
+            return redirect('admin/answer/'.$answer->question_id)->with('success','The Answer is added successfully');
         }
         else{
             return Redirect::back()->withInput()->with('error', 'The count of Answer is exceeded');

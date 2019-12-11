@@ -99,7 +99,7 @@
 <script src="{{ asset('vendors/select2/js/select2.js') }}" type="text/javascript"></script>
 <script src="{{ asset('vendors/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}" type="text/javascript" ></script>
 <script type="text/javascript" src="{{ asset('vendors/jasny-bootstrap/js/jasny-bootstrap.js') }}"></script>
-<script src="{{ asset('js/pages/add_newblog.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/pages/add_newvideo.js') }}" type="text/javascript"></script>
 
 <script>
     $('body').on('hidden.bs.modal', '.modal', function () {

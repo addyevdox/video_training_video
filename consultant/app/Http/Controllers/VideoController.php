@@ -14,4 +14,11 @@ class VideoController extends Controller
        return view('video.index', compact('videos'));
    }
 
+   public function item($id) {
+
+       $video = Video::where('id', $id)->first();
+
+       return view('video.item', compact('video'));
+   }
+
 }

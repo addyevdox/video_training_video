@@ -51,15 +51,13 @@
                                 <div>
                                     <h4 class="card-title float-left">{{$video->title}}</h4>
                                     <a href="{{ route('admin.survey.question', $video->id) }}"  data-id="{{$video->id }}" class="btn btn-add btn-success float-right">Answers</a>
-
+                                    <a href="{{ route('survey.export', $video->id) }}"  data-id="{{$video->id }}" class="btn btn-add btn-success float-right mr-1">Export</a>
                                 </div>
-                                <a class="fancybox-effects-a"
-                                   href="{{ asset('consultant/public/uploads/videos/'.$video->video) }}"
-                                   title="Click aside to exit popup">
-                                    <video class="img-fluid gallery-style" controls>
+
+                                <video class="img-fluid gallery-style" controls>
                                         <source src="{{ asset('consultant/public/uploads/videos/'.$video->video) }}" >
-                                    </video>
-                                </a>
+                                </video>
+
                                 <div class="">
                                     <div class="float-left">
                                         {{html_entity_decode($video->description, ENT_HTML5)}}

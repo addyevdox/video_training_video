@@ -77,7 +77,9 @@
 
 <!-- slider / breadcrumbs section -->
 @yield('top')
-
+<div id="notific">
+    @include('notifications')
+</div>
 <!-- Content -->
 @yield('content')
 

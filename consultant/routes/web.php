@@ -31,9 +31,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function () {
     Route::post('signin', 'AuthController@postSignin')->name('postSignin');
 //    Route::post('signup', 'AuthController@postSignup')->name('admin.signup');
     Route::post('forgot-password', 'AuthController@postForgotPassword')->name('forgot-password');
-    Route::get('login2', function () {
-        return view('admin/login2');
-    });
+
 
 
     # Forgot Password Confirmation
@@ -170,6 +168,7 @@ Route::group(['middleware' => 'user'], function () {
 #frontend views
     //Route::get('/', 'VideoController@index')->name('home');
     Route::name('home')->get('/')->uses('VideoController@index');
+    Route::get('video/item/{id}', 'VideoController@item');
 
     Route::get('blog','BlogController@index')->name('blog');
     Route::get('blog/{slug}/tag', 'BlogController@getBlogTag');
@@ -181,8 +180,8 @@ Route::group(['middleware' => 'user'], function () {
     Route::get('news/{news}', 'NewsController@show')->name('news.show');
 
     Route::get('survey/{id}', 'SurveyController@index')->name('survey');
-    Route::post('survey/reply', 'SurveyController@reply')->name('reply');
-
-
+    Route::post('survey/store', 'SurveyController@store')->name('store');
+    Route::get('survey/thank', 'SurveyController@thank')->name('thank');
+    Route::get('survey/export/{id}', 'SurveyController@export')->name('survey.export');
 });
 
