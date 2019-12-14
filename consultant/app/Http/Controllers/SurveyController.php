@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Video;
 use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use App\Models\VideoQuestion;
 use App\Models\VideoAnswer;
 use App\Models\VideoReply;
 use App\Models\Training;
+use Illuminate\Support\Facades\DB;
 use Mockery\Exception;
 use PhpParser\Node\Expr\Array_;
 use Sentinel;
 use Redirect;
+use Maatwebsite\Excel\Facades\Excel;
+use DateTime;
+use PHPExcel_Worksheet_Drawing;
 
 
 class SurveyController extends Controller
@@ -50,7 +56,6 @@ class SurveyController extends Controller
         ]);
         $current_user = Sentinel::getUser()->id;
         $quesions = VideoQuestion::where('video_id', $request->video_id)->get();
-        //echo $quesions ; die();
         $check_survey = VideoReply::where('user_id', $current_user)->where('video_id', $request->video_id)->get();
         if(!$check_survey->isEmpty())
         {
@@ -88,6 +93,134 @@ class SurveyController extends Controller
 
     public function export($id) {
 
-        echo $id;die();
+       $surveyQuestions = VideoQuestion::select('id', 'question')->where('video_id',$id)->get();
+
+       $date = date('d/m/Y');
+       $time = date('H:i A');
+       $cellData = [
+           ['', '', '', 'Training Report', '', '', '', '', '', '', '' ],
+           ['', '', '', '(Video Name)', '', '', '', 'Report Time', $date, '', ''],
+           ['', '', '', '', '', '', '', 'Report Date', $time, '', ''],
+           ['ID number', 'Full Name', 'Training complete', 'Survey Complete', '1st survey question', '2nd survey question', '3rd survey question', '4th survey question', '5th survey question', 'Survey comment', 'Date of completion']
+       ];
+
+       $cnt = count($surveyQuestions);
+
+
+       for ($i = 0; $i < $cnt; $i ++) $cellData[3][$i + 4] = $surveyQuestions[$i]->question;
+
+       $users = User::select('id','email', 'first_name', 'last_name')->get();
+
+       foreach($users as $user) {
+
+
+           $video = VideoReply::where('user_id', $user->id)->get();
+
+           $training_complete = Training::where('user_id', $user->id)->get();
+
+           $statusVal = "No";
+           $completed = "";
+
+           if ($video->count()) {
+               $cellData[1][3] = Video::select('title')->where('id', $video[0]->video_id)->get()[0]->title;
+               $questions = DB::table('survey_replys')
+                   ->select('survey_replys.question','survey_replys.answer', 'survey_replys.comment', 'survey_replys.created_at')
+                   ->join('video_survey_questions', 'video_survey_questions.question', '=', 'survey_replys.question')
+                   ->get();
+
+               $completed = count($questions) > 0 ? "Yes" : "No";
+               if($training_complete->count()) $statusVal = $training_complete[0]->status;
+           }
+
+           else {
+               $questions = array();
+           }
+
+           $temp = array(
+
+               $user->email,
+               $user->first_name." ".$user->last_name,
+               $statusVal,
+               $completed,
+               "", "", "", "", "", "", ""
+           );
+
+           foreach ($questions as $item) {
+
+               for ($i = 0; $i < $cnt; $i ++) {
+                   if ($item->question == $surveyQuestions[$i]->question) {
+                       $temp[$i + 4] = $item->answer;
+                       $s = $item->created_at;
+                       $dt = new DateTime($s);
+                       $temp[10] = $dt->format('d/m/Y');
+                       $temp[9] = $item->comment;
+
+                   }
+
+               }
+           }
+
+
+           array_push($cellData, $temp);
+
+
+       }
+
+
+
+       try {
+
+           return Excel::create('excel report', function ($excel) use ($cellData) {
+               $excel->sheet('sheet1', function ($sheet) use ($cellData){
+
+                   $sheet->rows($cellData);
+                   $sheet->setWidth(array(
+                       'A' => 20,
+                       'B' => 20,
+                       'C' => 20,
+                       'D' => 20,
+                       'E' => 20,
+                       'F' => 20,
+                       'G' => 20,
+                       'H' => 20,
+                       'I' => 20,
+                       'J' => 20,
+                       'K' => 20,
+                   ));
+
+                   $sheet->mergeCells('A1:B3');
+                   $sheet->mergeCells('D1:F1');
+                   $sheet->mergeCells('D2:F3');
+
+
+                   $objDrawing = new PHPExcel_Worksheet_Drawing();
+                   $objDrawing->setPath(public_path('img/logo2.png')); //your image path
+                   $objDrawing->setCoordinates('A1');
+                   $objDrawing->setWorksheet($sheet);
+
+                   $sheet->cell('A1', function($cell){
+                       $cell->setValignment('center');
+                       $cell->setAlignment('center');
+                   });
+
+                   $sheet->cell('D1', function($cell){
+                       $cell->setValignment('center');
+                       $cell->setAlignment('center');
+                   });
+
+                   $sheet->cell('D2', function($cell){
+                       $cell->setValignment('center');
+                       $cell->setAlignment('center');
+                   });
+               });
+           })->download('xlsx');
+       }
+
+       catch (Exception $e) {
+           die();
+       }
+
+
+       
     }
 }
