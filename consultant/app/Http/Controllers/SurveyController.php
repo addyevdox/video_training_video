@@ -104,32 +104,36 @@ class SurveyController extends Controller
            ['ID number', 'Full Name', 'Training complete', 'Survey Complete', '1st survey question', '2nd survey question', '3rd survey question', '4th survey question', '5th survey question', 'Survey comment', 'Date of completion']
        ];
 
-       $cnt = count($surveyQuestions);
+       $cnt = $surveyQuestions->count();
 
 
        for ($i = 0; $i < $cnt; $i ++) $cellData[3][$i + 4] = $surveyQuestions[$i]->question;
 
        $users = User::select('id','email', 'first_name', 'last_name')->get();
+       $cellData[1][3] = Video::select('title')->where('id', $id)->get()[0]->title;
 
        foreach($users as $user) {
 
 
-           $video = VideoReply::where('user_id', $user->id)->get();
+           $video = VideoReply::where('user_id', $user->id)->where("video_id", $id)->get();
 
-           $training_complete = Training::where('user_id', $user->id)->get();
+           $training_complete = Training::where('user_id', $user->id)->where('video_id', $id)->get();
 
            $statusVal = "No";
            $completed = "";
 
+           if(!$training_complete->isEmpty()) $statusVal = $training_complete[0]->status;
+
            if ($video->count()) {
-               $cellData[1][3] = Video::select('title')->where('id', $video[0]->video_id)->get()[0]->title;
+
                $questions = DB::table('survey_replys')
                    ->select('survey_replys.question','survey_replys.answer', 'survey_replys.comment', 'survey_replys.created_at')
                    ->join('video_survey_questions', 'video_survey_questions.question', '=', 'survey_replys.question')
+                   ->where('survey_replys.user_id', $user->id)
                    ->get();
 
                $completed = count($questions) > 0 ? "Yes" : "No";
-               if($training_complete->count()) $statusVal = $training_complete[0]->status;
+
            }
 
            else {

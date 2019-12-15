@@ -47,7 +47,9 @@
                     <label class="sr-only"> User ID</label>
                     <input class="form-control" id="email" name="email" placeholder="User Id"
                            value="{!! old('Email') !!}" >
-                    {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
+                    {{--{!! $errors->first('email', '<span class="help-block">:message</span>') !!}--}}
+
+                    {!! $errors->first('email', '<span class="help-block">The UserId has already been taken</span>') !!}
                 </div>
 
                 <div class="form-group {{ $errors->first('email', 'has-error') }}">
@@ -57,7 +59,7 @@
                     {!! $errors->first('address', '<span class="help-block">:message</span>') !!}
                 </div>
 
-                <div class="form-group {{ $errors->first('email', 'has-error') }}">
+                <div class="form-group {{ $errors->first('userid', 'has-error') }}">
                     <label class="sr-only"> Email</label>
                     <input type="email" class="form-control" id="userid" name="userid" placeholder="Email"
                            value="{!! old('Email') !!}" >

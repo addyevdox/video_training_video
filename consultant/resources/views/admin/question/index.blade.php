@@ -71,12 +71,18 @@
                                                                            data-loop="true"
                                                                            data-c="#428BCA"
                                                                            data-hc="#428BCA"
-                                                                           title="@lang('blog/table.update-blog')"></i></a>
+                                                                           title="@lang('answer/table.update-question')"></i></a>
+                                                <a href="{{url('/admin/answer/'.$question->id)}}"><i class="livicon" data-name="rocket"
+                                                                                                     data-size="18" data-loop="true" data-c="#8e2f9e"
+                                                                                                     data-hc="#8e2f9e"
+                                                                                                     title="@lang('answer/table.view-answers')"></i></a>
+
                                                 <a href="#delete_confirm" data-toggle="modal" data-id="{{$question->id }}"
                                                    data-target="#delete_confirm"><i class="livicon" data-name="remove-alt"
                                                                                     data-size="18" data-loop="true" data-c="#f56954"
                                                                                     data-hc="#f56954"
-                                                                                    title="@lang('blog/table.delete-blog')"></i></a>
+                                                                                    title="@lang('answer/table.delete-question')"></i></a>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -100,13 +106,13 @@
         $(document).ready(function() {
             $data_table =$('#table').DataTable();
 
-            var $url_path = '{!! url('/') !!}';
+            {{--var $url_path = '{!! url('/') !!}';--}}
 
-            $data_table.on('click','tr',function() {
+            {{--$data_table.on('click','tr',function() {--}}
 
-                var data = $data_table.row( this ).data();
-                window.location.href = $url_path + "/admin/answer/" + data[0];
-            });
+                {{--var data = $data_table.row( this ).data();--}}
+                {{--window.location.href = $url_path + "/admin/answer/" + data[0];--}}
+            {{--});--}}
         });
 
     </script>

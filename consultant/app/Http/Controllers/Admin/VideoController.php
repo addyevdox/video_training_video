@@ -120,7 +120,7 @@ class VideoController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|min:3',
             'description' => 'required',
-            'video' => 'required'
+            //'video' => 'required'
         ]);
 
         $message = $request->get('description');

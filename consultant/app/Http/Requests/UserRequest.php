@@ -33,9 +33,9 @@ class UserRequest extends FormRequest
                 return [
                     'first_name' => 'required|min:3',
                     'last_name' => 'required|min:3',
-                    //'email' => 'required|email|unique:users,email',
-                    'email' => 'required|min:3',
-                    'userid' => 'unique:users',
+                    'email' => 'required|unique:users,email',
+                    //'email' => 'required|unique:min:3',
+                    //'userid' => 'unique:users',
                     'password' => 'required|between:3,32',
                     'password_confirm' => 'required|same:password',
                     'pic_file' => 'mimes:jpg,jpeg,bmp,png,gif|max:10000'

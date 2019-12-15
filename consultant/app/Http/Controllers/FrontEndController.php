@@ -44,7 +44,7 @@ class FrontEndController extends JoshController
     {
         // Is the user logged in?
         if (Sentinel::check()) {
-            return Redirect::route('video');
+            return Redirect::route('home');
         }
         // Show the login page
         return view('login');
@@ -131,7 +131,7 @@ class FrontEndController extends JoshController
                 File::delete(public_path() . $folderName . $user->pic);
             }
             //save new file path into db
-            $user->pic =url('/').'/uploads/users/'.$safeName;
+            $user->pic =url('/consultant/public').'/uploads/users/'.$safeName;
 
         }
 

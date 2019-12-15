@@ -102,7 +102,7 @@ class UsersController extends JoshController
             $destinationPath = public_path() . '/uploads/users/';
             $safeName = str_random(10) . '.' . $extension;
             $file->move($destinationPath, $safeName);
-            $request['pic'] =url('/').'/uploads/users/'.$safeName;
+            $request['pic'] = public_path().'/uploads/users/'.$safeName;
         }
         //check whether use should be activated by default or not
         $activate = $request->get('activate') ? true : false;
@@ -198,7 +198,8 @@ class UsersController extends JoshController
                     File::delete($destinationPath . $user->pic);
                 }
                 //save new file path into db
-                $user->pic =url('/').'/uploads/users/'.$safeName;
+                echo public_path(); die();
+                $user->pic = url('/consultant/public').'/uploads/users/'.$safeName;
             }
 
             //save record
