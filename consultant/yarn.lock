@@ -8462,10 +8462,10 @@ tiny-inflate@^1.0.0, tiny-inflate@^1.0.2:
   resolved "https://registry.yarnpkg.com/tiny-inflate/-/tiny-inflate-1.0.2.tgz#93d9decffc8805bd57eae4310f0b745e9b6fb3a7"
   integrity sha1-k9nez/yIBb1X6uQxDwt0Xptvs6c=
 
-tinymce@^4.7.9:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-4.8.2.tgz#2ba65ee56f6641d8dcaca85db3fb36e9b35a3010"
-  integrity sha512-ssq/cGcK8ELG+a96H2mqH6QvsmTSlQk9wj+OYxLIOxsDnWfu90T1TGIachwcQnXsD5FeNFz5X7K860CP9JQCtQ==
+tinymce@^4.9.7:
+  version "4.9.7"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-4.9.7.tgz#74ce54f07cfc0268a5ac5e34f610044658c92f47"
+  integrity sha512-cj0HvUuniTuIjOAJdRt5BUfeQqM5yHjbA2NOub9HUHXlCrT9OwD9WBPU6tGlaPC2l2I4eGoOnT8llosZRdQU5Q==
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
