@@ -65,7 +65,7 @@
         "buttons": "^0.1.2",
         "c3": "^0.4.21",
         "card": "^2.4.0",
-        "chart.js": "^2.7.1",
+        "chart.js": "^2.9.4",
         "ckeditor": "^4.8.0",
         "clockface.js": "https://github.com/jetapps-eu/clockface.git",
         "countup.js": "^1.9.3",
