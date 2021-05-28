@@ -153,7 +153,7 @@
         "summernote": "^0.8.9",
         "sweetalert2": "^8.0.5",
         "switchery": "https://github.com/abpetkov/switchery.git",
-        "tinymce": "^4.7.9",
+        "tinymce": "^5.7.1",
         "toastr": "^2.1.4",
         "transitionize": "^0.0.3",
         "trumbowyg": "^2.9.4",
