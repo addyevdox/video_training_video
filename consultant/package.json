@@ -130,7 +130,7 @@
         "mixitup": "^3.2.2",
         "mocha": "^5.0.1",
         "modernizr": "^3.5.0",
-        "moment": "^2.20.1",
+        "moment": "^2.29.2",
         "morris.js": "^0.5.0",
         "nestable-list": "https://github.com/dbushell/Nestable.git",
         "noty": "^3.1.4",
